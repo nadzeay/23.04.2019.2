@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace PseudoEnumerable
@@ -17,7 +18,6 @@ namespace PseudoEnumerable
         /// </returns>
         /// <exception cref="ArgumentNullException">Throws if <paramref name="source"/> is null.</exception>
         /// <exception cref="ArgumentNullException">Throws if <paramref name="predicate"/> is null.</exception>
-
         public static IEnumerable<TSource> Filter<TSource>(this IEnumerable<TSource> source,
             Func<TSource> predicate)
         {
@@ -55,8 +55,7 @@ namespace PseudoEnumerable
         /// </returns>
         /// <exception cref="ArgumentNullException">Throws if <paramref name="source"/> is null.</exception>
         /// <exception cref="ArgumentNullException">Throws if <paramref name="key"/> is null.</exception>
-
-        public static IEnumerable<TSource> SortByDescending<TSource, TKey>(this IEnumerable<TSource> source,
+        public static IEnumerable<TSource> SortBy<TSource, TKey>(this IEnumerable<TSource> source,
             Func<TSource, TKey> key)
         {
             throw new NotImplementedException();
@@ -78,6 +77,38 @@ namespace PseudoEnumerable
         /// <exception cref="ArgumentNullException">Throws if <paramref name="comparer"/> is null.</exception>
         public static IEnumerable<TSource> SortBy<TSource, TKey>(this IEnumerable<TSource> source,
             Func<TSource, TKey> key, IComparer<TKey> comparer)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Casts the elements of an IEnumerable to the specified type.
+        /// </summary>
+        /// <typeparam name="TResult">The type to cast the elements of source to.</typeparam>
+        /// <param name="source">The <see cref="IEnumerable"/> that contains the elements to be cast to type TResult.</param>
+        /// <returns>
+        ///     An <see cref="IEnumerable{T}"/> that contains each element of the source sequence cast to the specified type.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">Throws if <paramref name="source"/> is null.</exception>
+        /// <exception cref="InvalidCastException">An element in the sequence cannot be cast to type TResult.</exception>
+        public static IEnumerable<TResult> CastTo<TResult>(IEnumerable source)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Determines whether all elements of a sequence satisfy a condition.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values.</param>
+        /// <param name="predicate">A function to test each element for a condition.</param>
+        /// <returns>
+        ///     true if every element of the source sequence passes the test in the specified predicate,
+        ///     or if the sequence is empty; otherwise, false
+        /// </returns>
+        /// <exception cref="ArgumentNullException">Throws if <paramref name="source"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">Throws if <paramref name="predicate"/> is null.</exception>
+        public static bool ForAll<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
         {
             throw new NotImplementedException();
         }
