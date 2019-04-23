@@ -19,7 +19,7 @@ namespace PseudoEnumerable
         /// <exception cref="ArgumentNullException">Throws if <paramref name="predicate"/> is null.</exception>
 
         public static IEnumerable<TSource> Filter<TSource>(this IEnumerable<TSource> source,
-            Func<TSource> predicate)
+            Func<TSource,bool> predicate)
         {
             throw new NotImplementedException();
         }
